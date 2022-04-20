@@ -26,4 +26,9 @@ public class PaymentServiceImpl implements PaymentService {
     public Payment getPaymentById(Long id) {
         return paymentMapper.getPaymentById(id);
     }
+
+    @Override
+    public String paymentZipkin(){
+        return "zipkin";
+    }
 }

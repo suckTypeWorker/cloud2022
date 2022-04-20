@@ -46,6 +46,4 @@ public class PaymentController {
         log.info("***********result:{}", result);
         return result;
     }
-
-
 }

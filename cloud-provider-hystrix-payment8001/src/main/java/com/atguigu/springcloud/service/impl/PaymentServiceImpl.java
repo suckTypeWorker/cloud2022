@@ -5,6 +5,7 @@ import com.atguigu.springcloud.service.PaymentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
@@ -62,6 +63,4 @@ public class PaymentServiceImpl implements PaymentService {
     public String paymentCircuitBreaker_fallback(@PathVariable("id") Integer id){
         return "id 不能负数，请稍候再试,(┬＿┬)/~~     id: " +id;
     }
-
-
 }

@@ -56,16 +56,21 @@ public class OrderController {
             return new CommonResult<>(forEntity.getStatusCodeValue(), "操作失败");
         }
     }
+
     @GetMapping("/consumer/payment/lb")
-    public String getPaymentLb(){
+    public String getPaymentLb() {
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
-        if(instances == null || instances.size() <= 0){
+        if (instances == null || instances.size() <= 0) {
             return null;
-        }else {
+        } else {
             ServiceInstance serviceInstance = loadBalancer.instances(instances);
             URI uri = serviceInstance.getUri();
-            return restTemplate.getForObject(uri + "/payment/lb",String.class);
+            return restTemplate.getForObject(uri + "/payment/lb", String.class);
         }
     }
 
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin() {
+        return restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin", String.class);
+    }
 }
