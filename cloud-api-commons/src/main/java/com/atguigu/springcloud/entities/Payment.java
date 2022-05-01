@@ -1,20 +1,17 @@
 package com.atguigu.springcloud.entities;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 /**
  * @author ZY152
- * @create 2022/3/21 3:15
+ * @create 2022/5/1 16:02
  * @description
  */
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class Payment implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Payment {
     private Long id;
     private String serial;
 }

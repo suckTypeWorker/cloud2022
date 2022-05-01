@@ -6,19 +6,18 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author ZY152
- * @create 2022/3/21 3:16
+ * @create 2022/5/1 16:13
  * @description
  */
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CommonResult<T> {
     private Integer code;
     private String message;
     private T data;
 
-    public CommonResult(Integer code, String message) {
-        this(code, message, null);
+    public CommonResult(Integer code,String message){
+        this(code,message,null);
     }
-
 }
